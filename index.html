@@ -122,7 +122,7 @@
         .pipeline {
             width: 90%;
             max-width: 1100px;
-            margin: 0 auto 80px;
+            margin: 0 auto 70px;
         }
 
         .section-title {
@@ -168,6 +168,100 @@
             line-height: 1.6;
         }
 
+        /* Experiment 2 Automation Section */
+        .automation {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 45px 35px;
+            text-align: center;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(129,236,236,0.18);
+            backdrop-filter: blur(15px);
+        }
+
+        .automation h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .automation h2 span {
+            color: #81ecec;
+        }
+
+        .automation > p {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: #969db2;
+            line-height: 1.7;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .flow-step {
+            padding: 13px 18px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #dfe6e9;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-4px);
+            border-color: #81ecec;
+        }
+
+        .arrow {
+            color: #81ecec;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Deployment Status */
+        .deployment-status {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .status-card {
+            padding: 25px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .status-card .icon {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .status-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .status-card p {
+            color: #969db2;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .success {
+            color: #55efc4;
+        }
+
         /* Footer */
         footer {
             width: 90%;
@@ -186,6 +280,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .deployment-status {
+                grid-template-columns: 1fr;
+            }
+
             .hero {
                 margin-top: 70px;
             }
@@ -198,6 +296,18 @@
 
             .pipeline-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .automation {
+                padding: 35px 20px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
             }
 
             footer {
@@ -213,12 +323,15 @@
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
 
+    <!-- Navigation -->
     <nav>
         <div class="logo">Dev<span>Flow</span></div>
         <div class="status">● Pipeline Online</div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
+
         <div class="tag">DEVOPS • AUTOMATION • CLOUD</div>
 
         <h1>
@@ -231,8 +344,10 @@
             connecting version control, continuous integration,
             team notifications, and cloud deployment.
         </p>
+
     </section>
 
+    <!-- Main Pipeline -->
     <section class="pipeline">
 
         <h2 class="section-title">The Deployment Pipeline</h2>
@@ -276,8 +391,81 @@
             </div>
 
         </div>
+
     </section>
 
+    <!-- Experiment 2: End-to-End Automation -->
+    <section class="automation">
+
+        <h2>End-to-End <span>Automation</span></h2>
+
+        <p>
+            Every code change travels through an automated DevOps
+            pipeline, from source control to continuous integration,
+            real-time communication, and cloud deployment.
+        </p>
+
+        <div class="flow">
+
+            <div class="flow-step">Git Push</div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">GitHub</div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">GitHub Actions</div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">Slack</div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">Vercel</div>
+
+            <div class="arrow">→</div>
+
+            <div class="flow-step">Live Website</div>
+
+        </div>
+
+    </section>
+
+    <!-- Deployment Status -->
+    <section class="deployment-status">
+
+        <div class="status-card">
+            <div class="icon success">✓</div>
+            <h3>Continuous Integration</h3>
+            <p>
+                GitHub Actions automatically executes the CI
+                workflow whenever new code is pushed.
+            </p>
+        </div>
+
+        <div class="status-card">
+            <div class="icon success">✓</div>
+            <h3>ChatOps Connected</h3>
+            <p>
+                Slack receives real-time build status notifications
+                from the automated pipeline.
+            </p>
+        </div>
+
+        <div class="status-card">
+            <div class="icon success">✓</div>
+            <h3>Continuous Deployment</h3>
+            <p>
+                Vercel automatically deploys the latest version
+                of the application from GitHub.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div>DevFlow CI/CD Showcase</div>
         <div>Automated • Connected • Deployed</div>
