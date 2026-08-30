@@ -1,13 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DevOps CI/CD WebApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlow | CI/CD Showcase</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b14;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background decoration */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.35;
+            z-index: -1;
+        }
+
+        .orb-one {
+            width: 320px;
+            height: 320px;
+            background: #6c5ce7;
+            top: -100px;
+            left: -80px;
+        }
+
+        .orb-two {
+            width: 300px;
+            height: 300px;
+            background: #00cec9;
+            right: -100px;
+            bottom: -80px;
+        }
+
+        /* Navigation */
+        nav {
+            width: 90%;
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 16px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00cec9;
+        }
+
+        .status {
+            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            background: rgba(0, 206, 201, 0.12);
+            color: #55efc4;
+        }
+
+        /* Hero */
+        .hero {
+            width: 90%;
+            max-width: 1100px;
+            margin: 100px auto 70px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            color: #81ecec;
+            font-size: 13px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 82px);
+            line-height: 1;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg, #81ecec, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #a9afc3;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Pipeline */
+        .pipeline {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #dfe6e9;
+        }
+
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            padding: 25px;
+            min-height: 160px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.055);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(129, 236, 236, 0.5);
+        }
+
+        .number {
+            font-size: 13px;
+            color: #81ecec;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .card p {
+            color: #969db2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 0 35px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            color: #747b91;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .pipeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                width: 92%;
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Hello DevOps CI/CD</h1>
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
 
-    <p>My first automated DevOps web application.</p>
+    <nav>
+        <div class="logo">Dev<span>Flow</span></div>
+        <div class="status">● Pipeline Online</div>
+    </nav>
+
+    <section class="hero">
+        <div class="tag">DEVOPS • AUTOMATION • CLOUD</div>
+
+        <h1>
+            Build. Ship.<br>
+            <span>Repeat.</span>
+        </h1>
+
+        <p>
+            A modern demonstration of an automated CI/CD workflow,
+            connecting version control, continuous integration,
+            team notifications, and cloud deployment.
+        </p>
+    </section>
+
+    <section class="pipeline">
+
+        <h2 class="section-title">The Deployment Pipeline</h2>
+
+        <div class="pipeline-grid">
+
+            <div class="card">
+                <div class="number">01 / SOURCE</div>
+                <h3>GitHub</h3>
+                <p>
+                    Source code is version controlled and maintained
+                    through a collaborative Git workflow.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">02 / INTEGRATE</div>
+                <h3>GitHub Actions</h3>
+                <p>
+                    Every push triggers an automated workflow that
+                    validates and processes the project.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">03 / CONNECT</div>
+                <h3>ChatOps</h3>
+                <p>
+                    Build status is communicated automatically to the
+                    development team through Slack.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">04 / DEPLOY</div>
+                <h3>Vercel</h3>
+                <p>
+                    Changes are automatically deployed to a globally
+                    accessible cloud-hosted website.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div>DevFlow CI/CD Showcase</div>
+        <div>Automated • Connected • Deployed</div>
+    </footer>
 
 </body>
-</html>-
+</html>
