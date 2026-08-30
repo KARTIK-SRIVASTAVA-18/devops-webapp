@@ -15,10 +15,18 @@ jobs:
       - name: Display Build Message
         run: echo "Build Success!"
 
-      - name: Notify Slack
+      - name: Notify Slack - Success
         if: success()
         run: |
           curl -X POST \
           -H 'Content-type: application/json' \
-          --data '{"text":"Build Completed Successfully! 🚀"}' \
+          --data '{"text":"✅ Build Completed Successfully!"}' \
+          "${{ secrets.SLACK_WEBHOOK_URL }}"
+
+      - name: Notify Slack - Failure
+        if: failure()
+        run: |
+          curl -X POST \
+          -H 'Content-type: application/json' \
+          --data '{"text":"❌ Build Failed! Please check GitHub Actions."}' \
           "${{ secrets.SLACK_WEBHOOK_URL }}"
